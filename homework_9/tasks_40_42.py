@@ -11,16 +11,14 @@ import pandas as pd
 data = pd.read_csv('california_housing_train.csv')
 
 # 1
-# median_house_value - это средняя стоимость дома
-
-res_1 = data[(data['population'] >= 0) & (data['population'] <= 500)]['median_house_value']
+res_1 = data[(data['population'] >= 0) & (data['population'] <= 500)]['median_house_value'].mean().round(2)
 print(res_1)
 
-# или res_1 = data[data['population'] <= 500]['median_house_value']  #количество людей не может быть отрицательным
+# res_1 = data[data['population'] <= 500]['median_house_value'].mean() #количество людей не может быть отрицательным
 # print(res_1)
 print()
 
 # 2
 res_2 = data[data['population'] == data['population'].min()][
-     'households'].max()
+    'households'].max()
 print(res_2)
